@@ -74,6 +74,25 @@ bot.on("message", msg => {
 				"title": `**${mention}** recibiste un Abrazo de **${author}**`
 			},
 			{
+				"name": "flip",
+				"init": (msg) => {
+					return {"coin": Math.round(Math.random()) };
+				},
+				"title": (state) => {
+					if(state.coin === 1) {
+						return `**${author}** te sacaste aguila`;
+					}
+					else {
+						return `**${author}** te sacaste sol`;
+					}
+				},
+				"action": (state) => {
+					let aguilaUrl = "https://i.imgur.com/VpcIiTD.gif";
+					let solUrl = "https://i.imgur.com/3ECJb4T.gif";
+					return {"url": state.coin === 1 ? aguilaUrl : solUrl}
+				}
+			},
+			{
 				"name": "tickle",
 				"action": neko.getSFWTickle
 			},
