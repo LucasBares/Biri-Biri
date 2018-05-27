@@ -1,7 +1,7 @@
 /* --------------
 
     Negan Bot
-  
+
 --------------- */
 
 const Discord = require("discord.js");
@@ -13,6 +13,7 @@ const meme = require("./meme.js");
 //const webos = require("./webos.js");
 const help = require("./help.js");
 const emotions = require("./emotions.js");
+const secrets = require("./secrets.json");
 
 startup.startup(bot);
 emotions.emotions(bot);
@@ -21,4 +22,4 @@ meme.meme(bot);
 //webos.webos(bot);
 reaction.reaction(bot);
 
-bot.login(process.env.BOT_TOKEN);
+bot.login(secrets.discord);

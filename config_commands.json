@@ -1,4 +1,7 @@
 {
+   "admins": [
+      "357008976052879371"
+   ],
    "cuteapi":{
       "types":[
          {
@@ -76,6 +79,9 @@
       ]
    },
    "commands":[
+      {
+         "name": "comando"
+      },
       {
         	"name": "flip"
       },

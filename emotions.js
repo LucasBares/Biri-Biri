@@ -4,12 +4,13 @@ const Discord = require("discord.js");
 const client = require("nekos.life");
 const cute = require("cuteapi");
 const config = require("./config_commands.json");
+const secrets = require("./secrets.json");
 var Cooldown = require('cooldown');
 let img = new Cooldown(50000);
 let text = new Cooldown(50000);
 
 const neko = new client();
-const cuteapi = new cute(config.cuteapi_token);
+const cuteapi = new cute(secrets.cuteapi);
 
 function famfamoMsg(title, imgUrl) {
 	const color = 0xff0000;
@@ -29,6 +30,45 @@ bot.on("message", msg => {
 		let cmd = msg.content.trim().split(" ")[0];
 
 		let commands = [
+			{
+				"name": "comando",
+				"init": (msg) => {
+					let isAdmin = config.admins.some(uid => { return uid === msg.author.id; });
+					let maybeCommand = msg.content.trim().split(/\s+/)[1];
+					let maybeAction = msg.content.trim().split(/\s+/)[2];
+					let cmds = config.commands.filter(c => { return c.name === maybeCommand; });
+					return {
+									"command": maybeCommand,
+									"commands": cmds,
+									"hasCommands": cmds.length > 0,
+									"action": maybeAction,
+									"isAdmin": isAdmin
+								};
+				},
+				"title": (state) => {
+					if(!state.isAdmin) {
+						return `Necesitas ser un admin`;
+					}
+					if(state.command === undefined) {
+						return "Necesitas especificar un comando";
+					}
+					if(state.command === "comando") {
+						return "No >:@ wanwan";
+					}
+					if(!state.hasCommands) {
+						return `Comando \`${state.command}\` no encontrado`;
+					}
+					if(state.action !== "activar" && state.action !== "desactivar") {
+						return `Necesitas especificar una action "activar" o "desactivar"`;
+					}
+					let action = (state.action === "activar") ? "activado" : "desactivado";
+					state.commands.forEach(c => { c.enable = (state.action === "activar"); });
+					return `(${state.commands.length}) comando ${state.command} ${action}`;
+				},
+				"action": (state) => {
+					return {"url": ""}
+				}
+			},
 			{
 				"name": "roll",
 				"init": (msg) => {
@@ -100,13 +140,13 @@ bot.on("message", msg => {
 						if (text.fire()) {
 						return `**${author}** te sacaste aguila`;
 						}else{
-						return `Debes esperar para poder tirar otra moneda!`; 
+						return `Debes esperar para poder tirar otra moneda!`;
 						}
 					}else {
 						if (text.fire()){
 						return `**${author}** te sacaste sol`;
 						}else{
-						return `Debes esperar para poder tirar otra moneda!`; 
+						return `Debes esperar para poder tirar otra moneda!`;
 						}
 					}
 				},
