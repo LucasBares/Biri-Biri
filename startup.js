@@ -27,7 +27,7 @@ exports.startup = function(bot){
 
 
 	bot.on('guildMemberAdd',(gm) => {
-	    const channel = getDefaultChannel(member.guild)
+	    const channel = getDefaultChannel(gm.guild)
 	    if(channel === undefined || channel === null) return
 	    channel.send('Bienvenido '+'<@' + gm.id +  '>' + ' <:vohiyo:412474913883160577>, no olvides leer las <#402905862274023435> <:pacman:420980551105642516>');
 	});
