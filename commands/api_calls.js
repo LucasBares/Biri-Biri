@@ -257,15 +257,17 @@ exports.getCommands = (clients) => {
       client.get(`https://rule34.xxx/index.php?page=dapi&s=post&q=index&tags=${parsed}`, function (data, response) {
       // Search the data and parse it to a json
       let info = data;
+      let max = info.posts.$.count;
 
       // Get the random post
-      let randomPost = Math.floor(Math.random() * (0 - 5)) + 5;
-
+      let randomPost = Math.floor(Math.random() * max) + 0;
+      
       // Validation of nothing found
       if (info.posts.$.count == '0') return msg.channel.send("No pude encontrar nada, marrano")
+      
       // Parse of posts
-      let post = info.posts.post;
-
+      let post = info.posts.post;  
+      
       // TODO: Resolve this bug (Maybe library bug?)
       // Handler of random bug
       if (post[randomPost].$ == undefined) return msg.channel.send("No pude encontrar nada con ese nombre, intenta con otra cosa, marrano")
