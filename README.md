@@ -52,7 +52,6 @@ Agradecimientos a:
   * Token, Key y Board Id de Trello = *clients.js* `const trello = new Trello("trello key here", "trello token here")` - *trello.js* `let boardId = "board id here"`
   * Sentry Uri = *login.js* `Raven.config(sentry_URI,{.....`
   * Node Env = *login.js* `let env = node_env...`
-  * Database y Reclamo URL = *index.js* `class Database { connectionString: "url of the database"`
   * Riot Api Key = *custom.js linea 39* `let apikey = "riot api key`
   * Open Weather Api Key = *custom.js linea 10* `let apikey = "openweather api key"`
   
