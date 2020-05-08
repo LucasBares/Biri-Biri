@@ -50,6 +50,11 @@ exports.getCommands = (clients) => {
       'image': config.jueves.images
     }),
 
+    new ImageTitleCommand({
+      'name': 'godzilla',
+      'image': config.godzilla.images
+    }),
+
     new MentionImageTitleCommand({
       'name': 'culear',
       'alias': ['culiar','culiada'],
