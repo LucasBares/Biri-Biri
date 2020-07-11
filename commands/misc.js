@@ -15,6 +15,12 @@ exports.getCommands = (clients) => {
     }),
 
     new ImageTitleCommand({
+      'name': 'lavarmanos',
+      'image': config.lavar.images,
+      'title': config.lavar.texts
+    }),
+
+    new ImageTitleCommand({
       'name': 'wag',
       'image': config.wag.images
     }),
@@ -38,6 +44,16 @@ exports.getCommands = (clients) => {
       'name': 'actitud',
       'image': config.actitud.images
     }),
+    
+    new ImageTitleCommand({
+      'name': 'jueves',
+      'image': config.jueves.images
+    }),
+
+    new ImageTitleCommand({
+      'name': 'godzilla',
+      'image': config.godzilla.images
+    }),
 
     new MentionImageTitleCommand({
       'name': 'culear',
@@ -56,11 +72,33 @@ exports.getCommands = (clients) => {
     }),
 
     new MentionImageTitleCommand({
+      'name': 'nalguear',
+      'alias': ['spank','nalgazo'],
+      'selfError': 'No te puedes nalguear a ti mismo, pendejo',
+      'image': config.nalgueada.images,
+      'title': config.nalgueada.texts
+    }),
+
+    new MentionImageTitleCommand({
+      'name': 'funar',
+      'selfError': 'No te puedes funar a ti mismo, pendejo',
+      'image': config.funada.images,
+      'title': config.funada.texts
+    }),
+
+    new MentionImageTitleCommand({
       'name': 'cepillar',
       'alias': ['cepillada','cepillar'],
       'selfError': 'No te puedes cepillar a ti mismo, pendejo!',
       'image': config.cepillar.images,
       'title': config.cepillar.texts
+    }),
+
+    new MentionImageTitleCommand({
+      'name': 'lavar',
+      'selfError': 'No te puedes lavar a ti mismo, pendejo!',
+      'image': config.lavarmanos.images,
+      'title': config.lavarmanos.texts
     }),
 
     new MentionImageTitleCommand({
@@ -90,7 +128,7 @@ exports.getCommands = (clients) => {
     new MentionImageTitleCommand({
       'name': 'apresiar',
       'alias': ['apreciar','praise'],
-      'selfError': ' ',
+      'selfError': 'No te puedes apresiar a ti mismo',
       'image': config.apresiar.images,
       'title': config.apresiar.texts
     }),
@@ -118,7 +156,6 @@ exports.getCommands = (clients) => {
         else {
           replyMessage.setTitle('Forever alone </3')
         }
-        msg.channel.send(replyMessage)
       }
     }),
 
@@ -158,9 +195,9 @@ exports.getCommands = (clients) => {
         else
           avatar = msg.author.avatarURL
         if(utils.isEmpty(avatar)) {
-          msg.channel.send(new message.BaseMessage(msg).setTitle('Usuario sin avatar'))
+          msg.channel.send(new message.BaseMessage(msg).setTitle('Usuario sin avatar'));
         } else {
-          msg.channel.send(new message.BaseMessage(msg).setImage(avatar))
+          msg.channel.send(new message.BaseMessage(msg).setImage(avatar));
         }
       }
     }),
@@ -180,7 +217,7 @@ exports.getCommands = (clients) => {
 
     new ImageTitleCommand({
       'name': 'dog',
-      'title': '<:webos:450520773652905984>',
+      'title': ' ',
       'image': async () => {
         let params = {
           'url': 'https://dog.ceo/api/breeds/image/random',
@@ -208,8 +245,8 @@ exports.getCommands = (clients) => {
       'execute': (msg) => {
         let mensaje = utils.getMessage(msg)
         let author = utils.getAuthor(msg)
-        let description = `**${author}** ha dado sus respetos por ${mensaje} <:sad:403381288188510210>`
-        msg.channel.send((new message.BaseMessage(msg)).setDescription(description))
+        let description = `**${author}** ha dado sus respetos por ${mensaje} <:sad:588526267012481030>`
+        msg.channel.send((new message.BaseMessage(msg)).setDescription(description));
       }
     }),
 

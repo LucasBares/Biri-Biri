@@ -6,23 +6,10 @@ class Database {
     this.pool = new Pool({
       connectionString: process.env.DATABASE_URL
     })
-    this.reclamo_pool = new Pool({
-      connectionString: process.env.RECLAMO_DATABASE_URL
-    })
     this.users = {}
     this.channels = {}
     this.loadChannels()
     this.loadUsers()
-  }
-
-  lastSunday() {
-    return moment().tz("America/Mexico_City").startOf('week').format()
-  }  
-
-  async getReclamo(term) {
-    const text = `select p.fb_profile_id,p.nombre,r.waifu,r.procedencia,r.img,r.fecha,p.racha,p.casado,p.intocable from reclamo.personas p inner join reclamo.reclamos r on p.fb_profile_id=r.fb_profile_id where waifu like $1 and r.fecha between $2 and now() order by r.id limit 1;`
-    const res = await this.reclamo_pool.query(text, [term, this.lastSunday()])
-    return res.rows[0]
   }
 
   async loadChannels() {

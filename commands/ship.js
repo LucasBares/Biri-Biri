@@ -1,5 +1,6 @@
 const CustomCommand = require('../core/command.js').CustomCommand
 const message = require('../core/message.js')
+const utils = require('../core/utils.js')
 
 exports.getCommands = (clients) => {
   return [

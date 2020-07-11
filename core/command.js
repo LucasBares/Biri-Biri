@@ -35,13 +35,22 @@ class Command {
     db.enableCommandForChannel(this.getFullName(), `${msg.channel.id}`)
   }
 
+  disableUser(msg,id) {
+    db.disableCommandForUser(this.getFullName(), `${id}`)
+  }
+
+  enableUser(msg,id) {
+    db.enableCommandForUser(this.getFullName(), `${id}`)
+  }
+
   isEnable(msg) {
     let name = this.getFullName()
     return db.isCommandEnableForChannel(this.getFullName(), `${msg.channel.id}`)
   }
 
   onDisable(msg) {
-    // Maybe you want to execute some action on this event
+    msg.delete(3000);
+    return msg.channel.send("Este comando esta deshabilitado!").then(msg =>{msg.delete(4000)});
   }
 
   isPaused(msg) {

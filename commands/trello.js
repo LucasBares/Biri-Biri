@@ -18,7 +18,7 @@ exports.getCommands = (clients) => {
           clients.trello.addCard(sugestion, content, boardId).then( (x) => {} )
           replyMessage.setTitle('Gracias, lo tomaremos en cuenta')
         }
-        msg.channel.send(replyMessage)
+        msg.channel.send(replyMessage);
       }
     })
   ]

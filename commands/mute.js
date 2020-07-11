@@ -25,6 +25,9 @@ class MuteCommand extends CustomCommand {
             A mute is given when a user reaches maxReports in a server.
             Mute reports can still be given out if a user already muted.
          ----------------------------------------------------------------- */
+        
+        // Check if any member has been mentioned
+        if (!recipient) return msg.channel.send("Dame a alguien que mutear, pendejo")
 
         // Check if a member has a specific permission on the guild!
         if (!has_admin || !has_manage) return msg.channel.send("Necesitas ser admin para hacer esto, pendejo")

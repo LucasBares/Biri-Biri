@@ -37,6 +37,13 @@ function randomColors() {
   return color = getRandom(colors)
 }
 
+function removeExtraFromId (data){
+  let remove = data.replace("<","");
+  let remove1 = remove.replace(">","");
+  let remove2 = remove1.replace("@","");
+  return remove2;
+}
+
 function getMessage(msg) {
   let arr = msg.content.trim().split(' ')
   arr.shift()
@@ -67,7 +74,29 @@ function formatDate(data) {
 
   return [day,month,year].join('/')
 }
+function msToTime(duration) {
+  var seconds = parseInt((duration / 1000) % 60),
+    minutes = parseInt((duration / (1000 * 60)) % 60),
+    hours = parseInt((duration / (1000 * 60 * 60)) % 24);
 
+  hours = (hours < 10) ? "0" + hours : hours;
+  minutes = (minutes < 10) ? "0" + minutes : minutes;
+  seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+  return hours + ":" + minutes + ":" + seconds;
+}
+
+function makeGifWord(text) {
+  let word = text.toLowerCase();
+  let separated = word.split("");
+  let arr = separated.map(i => ':gif'+i+":");
+
+  for( var i = arr.length-1; i--;){if ( arr[i] === ':gif :') arr.splice(arr.indexOf(':gif :'),1)}
+  let finalWord = arr.join(' ')
+  return finalWord
+}
+
+exports.msToTime = msToTime
 exports.isEmpty = isEmpty
 exports.getAuthor = getAuthor
 exports.getFirstMention = getFirstMention
@@ -81,3 +110,5 @@ exports.isFirstMentionAuthor = isFirstMentionAuthor
 exports.getContent = getContent
 exports.formatDate = formatDate
 exports.randomColors = randomColors
+exports.removeExtraFromId = removeExtraFromId
+exports.makeGifWord = makeGifWord

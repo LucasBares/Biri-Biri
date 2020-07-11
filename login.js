@@ -15,6 +15,14 @@ if(env === 'production') {
   console.timeEnd('SENTRY')
 }
 
+/* Workarround for shards disconnections */
+
+setTimeout(() => {
+  bot.ws.connection.triggerReady()
+},30000)
+
+/* End */
+
 console.time('discord')
 const Discord = require('discord.js')
 const bot = new Discord.Client({autoReconnect: true, max_message_cache: 0})
@@ -27,14 +35,33 @@ const reaction = require('./reaction.js')
 startup.startup(bot)
 reaction.reaction(bot)
 
+
+//Youtube music
+
+const music = require('telk-music');
+
+music(bot, {
+  apikey: process.env.YOUTUBE_API_KEY,
+	prefix: 'n!',
+	global: false,
+	maxQueueSize: 100,
+	deletemsg: false,
+  searchmsg: 'Buscando \`{song}\` . . . por favor espera!',
+  addedmsg: '**{song}** fue agregado a la queue!',
+  playmsg: ':notes: Está sonando **{song}**!',
+  loopmsg: 'Loop iniciado! **{toggle}**!'
+});
+
 // Command register
 const prefix = 'n!'
 const ds = require('./core/dispatcher.js')
 const clients = require("./core/clients.js")
 let dispatcher = new ds.Dispatcher(prefix, bot, clients)
 dispatcher.add('../commands/admin.js')
+dispatcher.add('../commands/admin_user.js')
 dispatcher.add('../commands/changelog.js')
 dispatcher.add('../commands/custom.js')
+dispatcher.add('../commands/api_calls.js')
 dispatcher.add('../commands/cute.js')
 dispatcher.add('../commands/help.js')
 dispatcher.add('../commands/meme.js')
@@ -43,9 +70,9 @@ dispatcher.add('../commands/neko.js')
 dispatcher.add('../commands/nsfw.js')
 dispatcher.add('../commands/ship.js')
 dispatcher.add('../commands/trello.js')
-dispatcher.add('../commands/reclamo.js')
 dispatcher.add('../commands/mute.js')
 dispatcher.add('../commands/seppuku.js')
+dispatcher.add('../commands/sauce.js')
 dispatcher.register()
 console.timeEnd('dispatcher')
 

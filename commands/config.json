@@ -1,16 +1,4 @@
 {
-  "admins": [
-    "274159725967572992",
-    "147090103859150848",
-    "226471573907963904",
-    "313068940651921408",
-    "250044591686811669",
-    "110249625713127424",
-    "300409676091097098",
-    "232370719407734784",
-    "365285848112955403",
-    "314619604590919681"
-  ],
    "neko": {
       "messages": {
          "pat": "**%(mention)s** *recibiste un pat de* **%(author)s**",
@@ -68,6 +56,41 @@
     ],
     "texts": ["#DabIsDead", "Dabear es de nubs", "El Dab está fuera de moda"]
   },
+  "lavar": {
+    "images": [
+      "https://k61.kn3.net/taringa/2/2/D/6/E/7/vagonettas/BBA.gif",
+      "https://reygif.com/media/hay-lavarse-muy-bien-las-manos-sino-queres-contagiarte-coronavirus-94414.gif",
+      "https://i.makeagif.com/media/4-09-2015/7jvZij.gif",
+      "https://agronoticiascommx.files.wordpress.com/2018/10/tumblr_n1xzoq5ny21t37ljno1_500.gif",
+      "https://jorgeescobar23.files.wordpress.com/2018/02/lavadomanos.gif?w=300"
+    ]
+  },
+  "godzilla": {
+    "images": [
+      "https://media.giphy.com/media/KdAlXxlRDDopW/giphy.gif",
+      "https://media.giphy.com/media/qjY8A5O5zYQmI/giphy.gif",
+      "https://media.giphy.com/media/VoqKxWK473S3m/giphy.gif",
+      "https://media.giphy.com/media/3OlfyzZmXlmj6/giphy.gif",
+      "https://37.media.tumblr.com/9d9d4aeb13e5db8628bab5940764a69b/tumblr_mxoxggoYLI1qe9d7ro1_400.gif",
+      "https://i.kym-cdn.com/photos/images/original/001/200/933/51c.gif",
+      "https://media.tenor.com/images/1b1266a673db59451e682541bf25b190/tenor.gif",
+      "https://media.tenor.com/images/ac4fdd1f30c0fb6d7b847786b7f14b4f/tenor.gif",
+      "https://media.tenor.com/images/992210417d6a002233547efecddef12b/tenor.gif",
+      "https://media1.giphy.com/media/VO2MiYWK4SRsk/source.gif",
+      "https://i.kym-cdn.com/photos/images/newsfeed/001/277/238/117.gif",
+      "https://66.media.tumblr.com/aa6ab9ca9402b4d9c570678f57d5e8fa/tumblr_nus2lfFA1r1tg7hbvo4_500.gif",
+      "http://tarstarkas.net/pics/movies/zf/zone-fighter-21-5-.gif",
+      "https://media.tenor.com/images/293017532be5d0fa175316263c33e37f/tenor.gif",
+      "https://media.tenor.com/images/3dbdf83327519a15c93306278352f5c4/tenor.gif",
+      "https://media.tenor.com/images/a2e26536829331e29c001152074559db/tenor.gif",
+      "https://66.media.tumblr.com/1e2306e829f48e832d84a46d109c37d1/tumblr_pi50zlsoft1wzw0ebo1_1280.gif",
+      "https://media.tenor.com/images/8e1e27a1ff5dd0a1daba46eb8600e653/tenor.gif",
+      "https://media0.giphy.com/media/ZB2vGNoyxoEG4X9zWJ/source.gif",
+      "https://i.gifer.com/Brps.gif",
+      "https://i.pinimg.com/originals/98/6b/62/986b62476e3cd71d71d0599299c4de85.gif",
+      "https://66.media.tumblr.com/660d39677ee3fd3dbe114ca539a0ce11/tumblr_pcsiy4oOWz1uejrjoo1_r1_400.gif"
+    ]
+  },
   "wag": {
     "images": [
       "https://cdn.weeb.sh/images/rynHqkKD-.gif",
@@ -80,16 +103,44 @@
       "https://cdn.weeb.sh/images/HklUqyFP-.gif"
     ]
   },
+  "nalgueada": {
+    "images": [
+      "https://media.giphy.com/media/iSOe5a2NeQ6yc/giphy.gif",
+      "https://media1.tenor.com/images/2bf0122435c8a7fcfa4c3ee835a0fa71/tenor.gif",
+      "https://i.imgur.com/YD4kBgb.gif",
+      "https://media1.tenor.com/images/d0f32f61c2964999b344c6846b30e1d6/tenor.gif"
+    ],
+    "texts": [
+      "%(mention)s, te esta nalgeando %(author)s",
+      "%(mention)s te ha nalgueado %(author)s"
+    ]
+  },
+  "funada": {
+    "images": [
+      "https://imgur.com/LAiv2M3"
+    ],
+    "texts": [
+      "%(mention)s, te funó %(author)s",
+      "%(mention)s te ha funado %(author)s"
+    ]
+  },
   "actitud":{
     "images": [
-      "https://cdn.discordapp.com/attachments/468929183150768131/470822956625559573/viernes.gif"
+      "https://cdn.discordapp.com/attachments/449824936048197635/477510960106700840/giphy.gif"
+    ]
+  },
+   "jueves":{
+    "images": [
+      "https://cdn.discordapp.com/attachments/449824936048197635/482192218963312640/asukaani1.gif"
     ]
   },
   "bailar": {
     "images": [
       "https://media.giphy.com/media/3o7qE2VAxuXWeyvJIY/giphy.gif",
       "https://media.giphy.com/media/13hxeOYjoTWtK8/giphy.gif",
-      "https://media.giphy.com/media/w7mLEAMcpjrpe/giphy.gif"
+      "https://media.giphy.com/media/w7mLEAMcpjrpe/giphy.gif",
+      "https://media.giphy.com/media/QLVFMf6gYaeqc/giphy.gif",
+      "https://cdn.discordapp.com/attachments/449824936048197635/477311451984298004/1509614395884.gif"
     ]
   },
   "suicide": {
@@ -126,7 +177,9 @@
       "https://cdn.discordapp.com/attachments/422831676155232267/455389362134450177/unnamed_3.gif",
       "https://cdn.discordapp.com/attachments/422831676155232267/455389362134450177/unnamed_3.gif",
       "https://cdn.discordapp.com/attachments/422831676155232267/455389419231379486/1482958306_16e0bd444240f2b7bd0312a67f6af211.gif",
-      "https://cdn.discordapp.com/attachments/422831676155232267/455389421198508042/aa2.gif"
+      "https://cdn.discordapp.com/attachments/422831676155232267/455389421198508042/aa2.gif",
+      "https://media.discordapp.net/attachments/468929183150768131/493138611722518529/1e1083b7-e53b-4a1d-8f61-d5bb4c2bd8cb.gif",
+      "https://cdn.discordapp.com/attachments/430562204979429377/556252568678825994/shinoJail.gif"
     ],
     "texts": [
       "%(mention)s, te esta culeando %(author)s",
@@ -137,11 +190,30 @@
   "putear": {
     "images": [
       "https://i.imgur.com/wQQZl7S.gif",
-      "https://i.imgur.com/euQLxmy.gif"
+      "https://i.imgur.com/euQLxmy.gif",
+      "https://i.imgur.com/DtVFuIZ.gif",
+      "https://i.imgur.com/2PW5KQP.gif",
+      "https://i.imgur.com/h3ZYqWl.gif",
+      "https://i.imgur.com/BMicMf6.gif",
+      "https://i.imgur.com/5ME1DrY.gif",
+      "https://i.imgur.com/hQhAOKv.gif",
+      "https://i.imgur.com/lGnUkhl.gif"
     ],
     "texts": [
       "%(mention)s, te esta puteando %(author)s",
       "%(mention)s, te esta poniendo una putiza %(author)s"
+    ]
+  },
+  "lavarmanos": {
+    "images": [
+      "https://k61.kn3.net/taringa/2/2/D/6/E/7/vagonettas/BBA.gif",
+      "https://reygif.com/media/hay-lavarse-muy-bien-las-manos-sino-queres-contagiarte-coronavirus-94414.gif",
+      "https://i.makeagif.com/media/4-09-2015/7jvZij.gif",
+      "https://agronoticiascommx.files.wordpress.com/2018/10/tumblr_n1xzoq5ny21t37ljno1_500.gif",
+      "https://jorgeescobar23.files.wordpress.com/2018/02/lavadomanos.gif?w=300"
+    ],
+    "texts": [
+      "%(mention)s, te esta lavando las manos %(author)s"
     ]
   },
   "morder":{
@@ -199,15 +271,15 @@
   "reactions": [
     {
       "message": "mamey",
-      "send": "coman mamey <:pacman:420980551105642516>"
+      "send": "coman mamey <:pacman:588510632471429139>"
     },
     {
-      "message": "<:pacman:420980551105642516>",
-      "react": "420980551105642516"
+      "message": "<:pacman:588510632471429139>",
+      "react": "588510632471429139"
     },
     {
-      "message": "<:wanwan:403968696067948554>",
-      "react": "403968696067948554"
+      "message": "<:wanwan:443598482347917323>",
+      "react": "443598482347917323"
     },
     {
       "message": "<:ban:403065152863469579>",
@@ -222,8 +294,8 @@
       "react": "412474913883160577"
     },
     {
-      "message": "<a:truleado:415551980719702016>",
-      "react": "415551980719702016"
+      "message": "<a:truleado:588510324530085904>",
+      "react": "588510324530085904"
     },
     {
       "message": "cuack",
@@ -239,7 +311,7 @@
     },
     {
       "message": ["chale", "umiyaron", "umiyado"],
-      "react": "415551980719702016"
+      "react": "588510324530085904"
     }
   ]
 }
