@@ -160,17 +160,6 @@ exports.getCommands = (clients) => {
     }),
 
     new CustomCommand({
-      'name': 'ping',
-      'execute': (msg) => {
-        latency = new Date().getTime() - msg.createdTimestamp
-        let title = latency + ' ms'
-        let replyMessage = new message.BaseMessage(msg)
-        replyMessage.setTitle(title)
-        msg.channel.send(replyMessage)
-      }
-    }),
-
-    new CustomCommand({
       'name': 'rate',
       'execute': (msg) => {
         let replyMessage = new message.BaseMessage(msg)
