@@ -50,6 +50,50 @@ function getMessage(msg) {
   return arr.join(' ')
 }
 
+async function getReactions(msg, emoji) {
+  const filter = (reaction, user) => {
+    return reaction.emoji.name === emoji && user.id === msg.author.id;
+  };
+
+  let x = await msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+
+  if (x) return true
+}
+
+async function createMute(msg, reaction){
+  let has_admin     = msg.member.permissions.has("ADMINISTRATOR")   // Check if the user has admin
+  let has_manage    = msg.member.permissions.has("MANAGE_MESSAGES") // Check if the user has Manage Messages
+  if (await getReactions(msg, reaction)){
+    if (has_admin || has_manage){
+      createRole('Muted', 'SEND_MESSAGES', msg)
+      let name = await getIdFromRole('Muted', msg)
+      denyRole(name, 'SEND_MESSAGES', msg)
+    }else{
+      return msg.channel.send("Necesitas ser admin para hacer esto, pendejo")
+    }
+  }else{
+    return msg.channel.send("a")
+  }
+}
+
+function denyRole(name, permissions, msg){
+  return msg.channel.overwritePermissions([
+    {
+      id: name,
+      deny: [permissions],
+    },
+  ], 'Creado el rol');
+}
+
+async function getIdFromRole(name, msg){
+  return await msg.guild.roles.cache.some(role => console.log('id + ' + role.id === name))
+}
+
+function createRole(name, permissions, msg) {
+  if(msg.guild.roles.cache.some(role => role.name === name)) return msg.channel.send("Ya hay un rol con ese nombre, pendejo")
+  msg.guild.roles.create({ data: { name: name, permissions: [permissions], position: "1" } });
+}
+
 function sendText(msg, text) {
   let reply = new message.BaseMessage(msg)
   reply.setTitle(text)
@@ -96,6 +140,9 @@ function makeGifWord(text) {
   return finalWord
 }
 
+exports.createMute = createMute
+exports.getReactions = getReactions
+exports.createRole = createRole
 exports.msToTime = msToTime
 exports.isEmpty = isEmpty
 exports.getAuthor = getAuthor

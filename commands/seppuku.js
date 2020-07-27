@@ -23,12 +23,18 @@ class MuteCommand extends CustomCommand {
          ----------------------------------------------------------------- */
         
         if (!muteRole){
+            msg.delete({timeout: 5000})
             let reply = new message.BaseMessage(msg)
-            reply.setDescription(`Necesito que haya un rol que se llame **Muted** para que funcione bien el comando`)
+            reply.setDescription(`Para que funcione el comando, debe existir el Rol **Muted**. Quieres crearlo?`)
             reply.setColor(0x00fd00)
-            msg.channel.send(reply)
+            msg.channel.send(reply).then(sentEmbed => {
+                sentEmbed.react("✅")
+                utils.createMute(sentEmbed, "✅")
+                sentEmbed.delete({timeout: 5000});
+            })
             return
         }
+
         // Do not allow users to report more than once every 10 minutes per server
         if(this.userReports[reporter] === undefined) this.userReports[reporter] = []
         if(this.userReports[reporter].every( (v,i,a) => ( v.time + mutePeriod < Date.now() || v.server !== server ) )) {
