@@ -24,10 +24,10 @@
   "simpear":{
      "images": [
         "https://media.giphy.com/media/13W6PFs0XIvlhC/giphy.gif",
-        "https://tenor.com/Xy06.gif",
-        "https://tenor.com/blsPQ.gif",
-        "https://tenor.com/VPXf.gif",
-        "https://tenor.com/bm8tI.gif"
+        "https://media1.tenor.com/images/7b2c11edf651bb1329f4555642545d00/tenor.gif",
+        "https://media1.tenor.com/images/40cdfd153b02a70564d7e8604186b48d/tenor.gif",
+        "https://media1.tenor.com/images/d0a2dc4cdbe7564874b1d43572f28856/tenor.gif",
+        "https://media1.tenor.com/images/c74ad02ebacc315ca7c34b5872a12a82/tenor.gif"
      ],
      "texts": [
         "%(mention)s, te está simpeando %(author)s"
@@ -35,13 +35,13 @@
   },
   "blush":{
      "images": [
-        "https://tenor.com/YwVZ.gif",
-        "https://tenor.com/bi7lU.gif",
-        "https://tenor.com/bgm2S.gif",
-        "https://tenor.com/NesW.gif",
-        "https://tenor.com/LN7I.gif",
-        "https://tenor.com/yFI2.gif",
-        "https://tenor.com/5tkF.gif"
+        "https://media1.tenor.com/images/097f46e1db35653902b10b0a322c908f/tenor.gif",
+        "https://media1.tenor.com/images/4f64dffddee3f6252f145c3371a00c01/tenor.gif",
+        "https://media1.tenor.com/images/d06d8c5273038c41f786bc75c53af470/tenor.gif",
+        "https://media1.tenor.com/images/1916a8aff754c9a8455688c7c8a1cee5/tenor.gif",
+        "https://media1.tenor.com/images/a7e87466022015e036c06c3927c251f9/tenor.gif",
+        "https://media1.tenor.com/images/274fc34d3add3ce4cbb5716cb4f94f4f/tenor.gif",
+        "https://media1.tenor.com/images/ad0fbaa8dd27994a8fbab2ab86122c7f/tenor.gif"
      ]
   },
   "dab": {
