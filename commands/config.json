@@ -21,6 +21,29 @@
          "holo": "**%(author)s** te está alimentando **%(mention)s**"
       }
    },
+  "simpear":{
+     "images": [
+        "https://media.giphy.com/media/13W6PFs0XIvlhC/giphy.gif",
+        "https://tenor.com/Xy06.gif",
+        "https://tenor.com/blsPQ.gif",
+        "https://tenor.com/VPXf.gif",
+        "https://tenor.com/bm8tI.gif"
+     ],
+     "texts": [
+        "%(mention)s, te está simpeando %(author)s"
+     ]
+  },
+  "blush":{
+     "images": [
+        "https://tenor.com/YwVZ.gif",
+        "https://tenor.com/bi7lU.gif",
+        "https://tenor.com/bgm2S.gif",
+        "https://tenor.com/NesW.gif",
+        "https://tenor.com/LN7I.gif",
+        "https://tenor.com/yFI2.gif",
+        "https://tenor.com/5tkF.gif"
+     ]
+  },
   "dab": {
     "images": [
       "https://cdn.weeb.sh/images/S1TQsg1c-.jpeg",

@@ -24,6 +24,11 @@ exports.getCommands = (clients) => {
       'name': 'wag',
       'image': config.wag.images
     }),
+    
+    new ImageTitleCommand({
+      'name': 'blush',
+      'image': config.blush.images,
+    }),
 
     new ImageTitleCommand({
       'name': 'bailar',
@@ -53,6 +58,13 @@ exports.getCommands = (clients) => {
     new ImageTitleCommand({
       'name': 'godzilla',
       'image': config.godzilla.images
+    }),
+
+    new MentionImageTitleCommand({
+      'name': 'simpear',
+      'selfError': 'No te puedes simpear!',
+      'image': config.simpear.images,
+      'title': config.simpear.texts
     }),
 
     new MentionImageTitleCommand({
