@@ -35,11 +35,11 @@ class Command {
     db.enableCommandForChannel(this.getFullName(), `${msg.channel.id}`)
   }
 
-  disableUser(msg,id) {
+  disableUser(id) {
     db.disableCommandForUser(this.getFullName(), `${id}`)
   }
 
-  enableUser(msg,id) {
+  enableUser(id) {
     db.enableCommandForUser(this.getFullName(), `${id}`)
   }
 
