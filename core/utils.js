@@ -49,10 +49,12 @@ function changeExtension(url) {
 }
 
 function removeExtraFromId (data){
+  /* KEKW
   let remove = data.replace("<","");
   let remove1 = remove.replace(">","");
   let remove2 = remove1.replace("@","");
-  return remove2;
+  */ 
+  return data.replace(/[^\w\s]/gi, '')
 }
 
 function getMessage(msg) {

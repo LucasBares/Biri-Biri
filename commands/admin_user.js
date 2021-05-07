@@ -12,6 +12,8 @@ exports.getCommands = (clients) => {
         let has_manage    = msg.member.permissions.has("MANAGE_MESSAGES") // Check if the user has Manage Messages
         let maybeCommand  = msg.content.trim().split(/\s+/)[1]            // Checks if the requested text is a command or not
         let authorId      = msg.author.id;                                // Saves the author ID for validations 
+        let mentionedUser = msg.mentions.users.map(v => v.username).toString()
+        let mentionedId   = msg.mentions.users.map(v => v.id).toString()
 
         // Check if a member has a specific permission on the guild!
         if (!has_admin || !has_manage){
@@ -32,33 +34,28 @@ exports.getCommands = (clients) => {
           return send(msg, `Comando \`${maybeCommand}\` no encontrado`)
         }
 
-        let maybeUser   = msg.content.trim().split(/\s+/)[3]
-
-        if(!maybeUser){
-          return send(msg,`Necesitas etiquetar a alguien, pendejo`)
-        }
-        
-        let id = utils.removeExtraFromId(maybeUser);
-        
-        if(id === authorId){
-          return send(msg,`No te puedes hacer esto a ti mismo, pendejo`)
-        }
-        
-        if(id === NaN || !id){
-          return send(msg,`Algo salio mal. Etiquetaste a alguien, pendejo?`)
-        }
-        
-        
         let maybeAction = msg.content.trim().split(/\s+/)[2]
 
         if(maybeAction !== 'activar' && maybeAction !== 'desactivar') {
           return send(msg, `Necesitas especificar una action 'activar' o 'desactivar', pendejo`)
         }
 
-        let action = (maybeAction === 'activar') ? 'activado' : 'desactivado'
-        action === 'activado' ? command.enableUser(msg,id) : command.disableUser(msg,id)
+        if(!mentionedUser){
+          return send(msg,`Necesitas etiquetar a alguien, pendejo`)
+        }
         
-        return send(msg, `Comando ${command.name} ${action} para el usuario ${maybeUser}`)
+        if(mentionedId === authorId){
+          return send(msg,`No te puedes hacer esto a ti mismo, pendejo`)
+        }
+        
+        if(mentionedId === NaN || !mentionedId){
+          return send(msg,`Algo salio mal. Etiquetaste a alguien, pendejo?`)
+        }
+
+        let action = (maybeAction === 'activar') ? 'activado' : 'desactivado'
+        action === 'activado' ? command.enableUser(msg, mentionedId) : command.disableUser(msg, mentionedId)
+        
+        return send(msg, `Comando ${command.name} ${action} para el usuario ${mentionedUser}`)
     }
     })
   ]
